@@ -8,11 +8,26 @@ function Language() {
     const [selectedLanguage, setSelectedLanguage] = useState("日本語");
 
     const languages = [
-        "日本語",
-        "英語",
-        "韓国語",
-        "中国語・簡体字",
-        "中国語・繁体字"
+        {
+            name: "日本語",
+            flag: "../../public/Language/flags/japan.svg"
+        },
+        {
+            name: "英語",
+            flag: "../../public/Language/flags/uk.svg"
+        },
+        {
+            name: "韓国語",
+            flag: "../../public/Language/flags/korea.svg"
+        },
+        {
+            name: "中国語・簡体字",
+            flag: "../../public/Language/flags/china.svg"
+        },
+        {
+            name: "中国語・繁体字",
+            flag: "../../public/Language/flags/taiwan.svg"
+        }
     ];
 
     // つぎのページリンク
@@ -21,25 +36,32 @@ function Language() {
     };
 
     return (
-        <div className = "languagePage">
-            <div className = "languageContainer">
-                <img src = "/Language/language.png" alt = "Language" className = "languageIcon" />
+        <div className="languagePage">
+            <div className="languageContainer">
+                <img src="/Language/language.png" alt="Language" className="languageIcon" />
 
-                <div className = "select">
-                    <span className = "selectTitle">
+                <div className="select">
+                    <span className="selectTitle">
                         言語を選択してください
                     </span>
 
                     {languages.map((language) => (
                         <button
-                            key = {language}
-                            className = {`languageItem ${selectedLanguage === language ? "selected" : ""
-                                }`}
-                            onClick={() => setSelectedLanguage(language)}
+                            key={language.name}
+                            className={
+                                `languageItem ${selectedLanguage === language.name
+                                    ? "selected"
+                                    : ""
+                                }`
+                            }
+                            onClick={() => setSelectedLanguage(language.name)}
                         >
-                            <span>{language}</span>
+                            <div className="languageName">
+                                <img src={language.flag} alt={language.name} className="flag" />
+                                <span>{language.name}</span>
+                            </div>
 
-                            {selectedLanguage === language && (
+                            {selectedLanguage === language.name && (
                                 <span className="checkMark">✓</span>
                             )}
                         </button>
