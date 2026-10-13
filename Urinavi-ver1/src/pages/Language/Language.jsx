@@ -49,10 +49,7 @@ function Language() {
                         <button
                             key={language.name}
                             className={
-                                `languageItem ${selectedLanguage === language.name
-                                    ? "selected"
-                                    : ""
-                                }`
+                                `languageItem ${selectedLanguage === language.name ? "selected" : ""}`
                             }
                             onClick={() => setSelectedLanguage(language.name)}
                         >
