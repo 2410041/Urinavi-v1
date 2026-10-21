@@ -1,0 +1,45 @@
+{
+    "language": {
+        "title": "Please select your language",
+        "start": "Get Started"
+    },
+    "header": {
+        "store": "Asuka Store",
+        "language": "Change Language",
+        "map": "Store Map"
+    },
+    "home": {
+        "title": "Find Products",
+        "search": "Search by product or brand",
+        "category": "Browse Categories",
+        "dailyProducts": "Today's Specials"
+    },
+    "category": {
+        "seafood": "Seafood",
+        "vegetables": "Fruits & Vegetables",
+        "meat": "Meat",
+        "deli": "Prepared Foods",
+        "food": "Groceries",
+        "daily": "Refrigerated Foods",
+        "drinks": "Beverages",
+        "alcohol": "Alcoholic Beverages",
+        "medicine": "Medicines",
+        "goods": "Household Goods"
+    },
+    "product": {
+        "price": "Price",
+        "description": "Product Description",
+        "volume": "Net Quantity",
+        "location": "Find in Store",
+        "notFound": "No products found",
+        "notAvailable": "This product is currently unavailable"
+    },
+    "common": {
+        "back": "Back",
+        "close": "Close",
+        "confirm": "Confirm",
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "retry": "Try Again"
+    }
+}

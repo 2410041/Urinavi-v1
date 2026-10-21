@@ -1,0 +1,45 @@
+{
+    "language": {
+        "title": "請選擇語言",
+        "start": "開始使用"
+    },
+    "header": {
+        "store": "飛鳥店",
+        "language": "切換語言",
+        "map": "店內地圖"
+    },
+    "home": {
+        "title": "尋找商品",
+        "search": "依商品名稱或品牌搜尋",
+        "category": "依分類尋找",
+        "dailyProducts": "今日特價商品"
+    },
+    "category": {
+        "seafood": "海鮮水產",
+        "vegetables": "水果蔬菜",
+        "meat": "肉類",
+        "deli": "熟食",
+        "food": "食品",
+        "daily": "冷藏食品",
+        "drinks": "飲料",
+        "alcohol": "酒類",
+        "medicine": "藥品",
+        "goods": "日用品"
+    },
+    "product": {
+        "price": "價格",
+        "description": "商品說明",
+        "volume": "淨含量",
+        "location": "查看商品位置",
+        "notFound": "找不到商品",
+        "notAvailable": "目前未販售此商品"
+    },
+    "common": {
+        "back": "返回",
+        "close": "關閉",
+        "confirm": "確認",
+        "loading": "載入中...",
+        "error": "發生錯誤",
+        "retry": "重試"
+    }
+}

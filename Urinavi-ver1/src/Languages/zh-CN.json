@@ -1,0 +1,45 @@
+{
+    "language": {
+        "title": "请选择语言",
+        "start": "开始使用"
+    },
+    "header": {
+        "store": "飞鸟店",
+        "language": "切换语言",
+        "map": "店内地图"
+    },
+    "home": {
+        "title": "查找商品",
+        "search": "按商品名称或品牌搜索",
+        "category": "按分类查找",
+        "dailyProducts": "今日特价商品"
+    },
+    "category": {
+        "seafood": "海鲜水产",
+        "vegetables": "水果蔬菜",
+        "meat": "肉类",
+        "deli": "熟食",
+        "food": "食品",
+        "daily": "冷藏食品",
+        "drinks": "饮料",
+        "alcohol": "酒类",
+        "medicine": "药品",
+        "goods": "日用品"
+    },
+    "product": {
+        "price": "价格",
+        "description": "商品说明",
+        "volume": "净含量",
+        "location": "查看商品位置",
+        "notFound": "未找到商品",
+        "notAvailable": "目前不销售该商品"
+    },
+    "common": {
+        "back": "返回",
+        "close": "关闭",
+        "confirm": "确认",
+        "loading": "加载中...",
+        "error": "发生错误",
+        "retry": "重试"
+    }
+}
