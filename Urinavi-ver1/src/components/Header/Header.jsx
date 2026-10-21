@@ -1,19 +1,24 @@
 import { useState, useEffect, useRef } from "react";
-import { reactDom } from "react-dom";
+import { useTranslation } from "react-i18next";
 import "../Header/HeaderModule.css";
 import { createPortal } from "react-dom";
 
 const languages = [
-    { code: "ja", name: "日本語", subtitle: "Japanese" },
-    { code: "en", name: "英語", subtitle: "English" },
-    { code: "ko", name: "韓国語", subtitle: "Korean" },
-    { code: "zh-CN", name: "中国語・簡体字", subtitle: "Chinese (Simplified)" },
-    { code: "zh-TW", name: "中国語・繁体字", subtitle: "Chinese (Traditional)" }
+    { code: "ja", name: "日本語" },
+    { code: "en", name: "英語" },
+    { code: "ko", name: "韓国語" },
+    { code: "zh-CN", name: "中国語・簡体字" },
+    { code: "zh-TW", name: "中国語・繁体字" }
 ];
 
 export default function Header({ storeName = "飛鳥店" }) {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedLanguage, setSelectedLanguage] = useState("ja");
+
+    // 翻訳関数と言語情報を取得
+    const { t: translate, i18n } = useTranslation();
+
+    // 現在の言語を取得
+    const selectedLanguage = i18n.resolvedLanguage || "ja";
 
     // useRefはHTML要素を直接参照するときに使用
     // triggerRef: 言語切り替えボタン
@@ -22,7 +27,7 @@ export default function Header({ storeName = "飛鳥店" }) {
     const sheetRef = useRef(null);
 
     // find: 配列の中から条件に一致する最初の要素を探すソケッド
-    const currentLanguage = languages.find((language) => language.code === selectedLanguage);
+    const currentLanguage = languages.find((language) => language.code === selectedLanguage) ?? languages[0];
 
     useEffect(() => {
 
@@ -63,7 +68,7 @@ export default function Header({ storeName = "飛鳥店" }) {
     }, [isOpen]);
 
     const handleLanguageChange = (code) => {
-        setSelectedLanguage(code);
+        i18n.changeLanguage(code);
         setIsOpen(false);
     }
 
@@ -73,7 +78,7 @@ export default function Header({ storeName = "飛鳥店" }) {
                 <div className="headerBrand">
                     <img src="/Evergreen.png" alt="エバグリーン" className="headerLogo"></img>
                     <span className="headerStoreName">
-                        {storeName}
+                        {translate("header.store", { defaultValue: storeName })}
                     </span>
                 </div>
 
@@ -95,9 +100,8 @@ export default function Header({ storeName = "飛鳥店" }) {
                         <div className="sheetHeader">
                             <div>
                                 <h2 id="languageSheetTitle">
-                                    表示言語を選択
+                                    {translate("language.title")}
                                 </h2>
-                                <p>Language settings</p>
                             </div>
 
                             <button type="button" className="sheetCloseButton" onClick={() => setIsOpen(false)} aria-label="閉じる">
@@ -107,15 +111,11 @@ export default function Header({ storeName = "飛鳥店" }) {
 
                         <div className="languageList">
                             {languages.map((lang) => (
-                                <button key={lang.code} typec="button" className={
+                                <button key={lang.code} type="button" className={
                                     `languageOption ${selectedLanguage === lang.code ? "isSelected" : ""}`
                                 } aria-pressed={selectedLanguage === lang.code} onClick={() => handleLanguageChange(lang.code)}>
                                     <span className="languageName">
                                         {lang.name}
-                                    </span>
-
-                                    <span className="languageSub">
-                                        {lang.sub}
                                     </span>
 
                                     {selectedLanguage === lang.code && (
